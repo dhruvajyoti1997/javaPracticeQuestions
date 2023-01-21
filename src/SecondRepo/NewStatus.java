@@ -24,14 +24,14 @@ public class NewStatus {
 		
 		//sum of elements
 		Integer sum=list.stream().reduce(0, (a,b) -> a+b);
-		
+		list.stream().collect(Collectors.summingInt(Integer -> Integer.intValue()));
 		System.out.println(sum);
 		
 		//calculate the largest number
 		
 		Integer maxNum= list.stream().max(Comparator.comparing(i -> i)).get();
 		System.out.println("MAXNUM -->"+ maxNum);
-		
+		list.stream().max(Comparator.comparing(Integer :: valueOf)).get();
 		Integer minNum=list.stream().min(Comparator.comparing(i ->i)).get();
 		
 		System.out.println("Minimum -->"+ minNum);
@@ -47,6 +47,21 @@ public class NewStatus {
 //				numbers.remove(rs);
 //			}
 //		}
+		
+		StringJoiner stj = new StringJoiner(",");
+        // Separated the elements with a comma in between.
+         
+        stj.add("Saket");
+        stj.add("John");
+        stj.add("Franklin");
+        stj.add("Ricky");
+        stj.add("Trevor");
+         
+        // Added elements into StringJoiner “stj”
+         
+        System.out.println(stj);
+        
+        //https://www.softwaretestinghelp.com/java-8-interview-questions/
 	
 	}
 
